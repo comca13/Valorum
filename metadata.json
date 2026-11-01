@@ -1,0 +1,6 @@
+{
+  "name": "Valorum Financeiro BRL",
+  "description": "Dashboard financeiro pessoal com cotações em tempo real de Ibovespa, Dólar, Euro, Taxa Selic, CDI e gráficos de tendência interativos.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

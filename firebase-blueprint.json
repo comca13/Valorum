@@ -1,0 +1,73 @@
+{
+  "entities": {
+    "UserProfile": {
+      "title": "UserProfile",
+      "description": "User profile information and metadata",
+      "type": "object",
+      "properties": {
+        "uid": {
+          "type": "string",
+          "maxLength": 128,
+          "description": "Unique Google user ID"
+        },
+        "email": {
+          "type": "string",
+          "maxLength": 256,
+          "description": "User email address"
+        },
+        "displayName": {
+          "type": "string",
+          "maxLength": 128,
+          "description": "User display name"
+        },
+        "photoURL": {
+          "type": "string",
+          "maxLength": 1024,
+          "description": "User profile photo URL"
+        },
+        "updatedAt": {
+          "type": "string",
+          "maxLength": 64,
+          "description": "ISO timestamp of last update"
+        }
+      },
+      "required": ["uid", "email"]
+    },
+    "UserPlanner": {
+      "title": "UserPlanner",
+      "description": "User personal budget, 50/30/20 categories and financial indicators data",
+      "type": "object",
+      "properties": {
+        "userId": {
+          "type": "string",
+          "maxLength": 128,
+          "description": "Owner user UID"
+        },
+        "plannerData": {
+          "type": "object",
+          "description": "Family income, expense entries and budget calculations"
+        },
+        "alerts": {
+          "type": "array",
+          "description": "Custom indicator alert thresholds"
+        },
+        "updatedAt": {
+          "type": "string",
+          "maxLength": 64,
+          "description": "ISO timestamp of last cloud sync"
+        }
+      },
+      "required": ["userId", "plannerData"]
+    }
+  },
+  "firestore": {
+    "/users/{userId}": {
+      "schema": "UserProfile",
+      "description": "Root user document storing authentication profile info"
+    },
+    "/users/{userId}/data/planner": {
+      "schema": "UserPlanner",
+      "description": "User budget planner and alert settings document"
+    }
+  }
+}

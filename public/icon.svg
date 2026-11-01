@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0c1220" />
+      <stop offset="100%" stop-color="#060911" />
+    </linearGradient>
+    <linearGradient id="brandGrad" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#0891b2" />
+      <stop offset="50%" stop-color="#06b6d4" />
+      <stop offset="100%" stop-color="#10b981" />
+    </linearGradient>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="16" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="512" height="512" rx="112" fill="url(#bgGrad)" />
+  <rect width="512" height="512" rx="112" fill="none" stroke="#1e293b" stroke-width="8" />
+
+  <!-- Inner Brand Badge -->
+  <rect x="76" y="76" width="360" height="360" rx="84" fill="#0f172a" stroke="#334155" stroke-width="4" />
+  
+  <!-- Subtle glowing background chart accent -->
+  <path d="M 120 340 L 200 280 L 280 310 L 392 180" fill="none" stroke="#0891b2" stroke-width="8" opacity="0.25" stroke-linecap="round" />
+
+  <!-- Trending Up Icon Arrow Symbol -->
+  <g filter="url(#glow)">
+    <polyline points="132,332 220,244 292,284 380,180" fill="none" stroke="url(#brandGrad)" stroke-width="36" stroke-linecap="round" stroke-linejoin="round" />
+    <polyline points="300,180 380,180 380,260" fill="none" stroke="url(#brandGrad)" stroke-width="36" stroke-linecap="round" stroke-linejoin="round" />
+  </g>
+
+  <!-- Dot Accents / Data Nodes -->
+  <circle cx="132" cy="332" r="14" fill="#0891b2" />
+  <circle cx="220" cy="244" r="14" fill="#06b6d4" />
+  <circle cx="292" cy="284" r="14" fill="#14b8a6" />
+  <circle cx="380" cy="180" r="16" fill="#10b981" />
+</svg>
